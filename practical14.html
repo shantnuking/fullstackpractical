@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Practical-14</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+               font-family: Arial, Helvetica, sans-serif;
+          }
+
+          body {
+               
+               margin: 0;
+               font-family: Arial, Helvetica, sans-serif;
+          }
+
+          .button {
+               display: flex;
+               margin-left: auto;
+               margin-right: auto;
+               justify-content: center;
+          }
+
+          button{
+               font-size: 50px;
+               margin: 15px;
+               width: 50px;
+               color: grey;
+          }
+     </style>
+</head>
+
+<body>
+
+     <h1 style="color: blue; text-align: center; margin-top: 14px; font-size:80px;">COUNTER</h1>
+     <div class="button">
+          <button id="+" onclick="">+</button>
+          <span id="increment" style="margin-top:25px ; font-size: 50px;"></span>
+          <button id="-" onclick="">-</button>
+     </div>
+
+<script >
+    console.log("helo");
+    document.getElementById("+").disabled = false;
+    document.getElementById("-").disabled = false;
+
+    let count = 0;
+    document.getElementById("+").onclick = function (e) {
+    count++;
+    let span = document.getElementById("increment");
+     span.innerHTML = count;
+    console.log(count);
+    };
+
+    document.getElementById("-").onclick = function (e) {
+    count--;
+    let span = document.getElementById("increment");
+    span.innerHTML = count;
+    console.log(count);
+    if (count == 0) {
+        disableBtn();
+    }
+    };
+    function disableBtn() {
+    document.getElementById("+").disabled = true;
+    document.getElementById("-").disabled = true;
+    }
+    </script>
+
+</body>
+
+</html>
